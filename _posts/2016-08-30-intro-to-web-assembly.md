@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Intro to Web Assembly
-date:       2016-08-30 20:27:17
+date:       2016-09-01 13:29:10
 summary:    A brief introduction to what Web Assembly is and why you might want to use it.
 categories: wasm web-assembly
 ---
