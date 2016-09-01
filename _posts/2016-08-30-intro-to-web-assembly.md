@@ -16,8 +16,6 @@ There are a whole bunch of ways that developers might need to interact with WASM
 
 If you have a module file it's very easy (if a little boiler-platey) to get an instance of the module.
 
-If you want to play along at home you can try this out by enabling WASM with chrome://flags/#enable-webassembly in Chrome.
-
 {% highlight js %}
   fetch('http://matscales.com/fibonacci.wasm')
       .then(response => response.arrayBuffer())
@@ -26,10 +24,15 @@ If you want to play along at home you can try this out by enabling WASM with chr
       .then(module => new WebAssembly.Instance(module))
       .then(instance => {
         // Do stuff with the module here
-        alert(instance.exports.fibonacci(10));
+        alert(instance.exports.fibonacci(20));
       });
 {% endhighlight %}
-<button id="fib">Try it</button>
+
+If you want to play along at home you can try this out by enabling WASM with chrome://flags/#enable-webassembly in Chrome.
+<br/>
+<button id="fib">Try it!</button>
+<br/>
+<br/>
 <script>
   var button = document.getElementById('fib');
   button.addEventListener('click', function() {
@@ -41,10 +44,13 @@ If you want to play along at home you can try this out by enabling WASM with chr
         .then(function(module) {return new WebAssembly.Instance(module);})
         .then(function(instance) {
           // Do stuff with the module here
-          alert(instance.exports.fibonacci(10));
+          alert(instance.exports.fibonacci(20));
         });
   });
 </script>
+
+This very basic example calculates Fibonacci numbers.
+
 What that module instance looks like depends on the module. If the module has any exports then the instance will have an `exports` property, which is an object. Currently there are two types of things that could be exported - functions and memory.
 
 Functions will look like regular functions, though when you look at them in devtools you'll see that they are treated as native code:
@@ -99,5 +105,3 @@ You can also squint and imagine how this can be used to pass around more complex
 The problem with this, of course, is that you need to understand the contract between the JS function and the WASM module. I think that, realistically, most module providers will just give you the JS library that they built themselves that wraps the loading and instantiating of the module along with appropriate import functions. However, it's probably useful to understand what is going on underneath.
 
 I think that will do for now. Next time I'm going to talk about compiling C to WASM.
-
-// TODO: Provide some simple example modules that people can play around with.
