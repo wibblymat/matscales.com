@@ -3,6 +3,7 @@ layout:     post
 title:      Devrel Life
 date:       2017-01-30 00:00:00
 summary:    I'm going to start writing about what it is that I actually do every day
+comments:   true
 ---
 Hello developers!
 
