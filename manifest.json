@@ -1,5 +1,5 @@
 {
-  "start_url": "/",
+  "start_url": "/?manifest=1",
   "name": "Mat's Tech Blog",
   "short_name": "Mat's Tech Blog",
   "background_color": "#ffffff",
