@@ -31,13 +31,13 @@ It's an extremely simple game, which makes it ideal for this kind of sample. Alm
 
 The very first thing I did was knock out a 3D model of the dinosaur in Blender. I'd never made anything in Blender before, so it probably took me half a day, including watching a bunch of tutorials on YouTube.
 
+<img alt="Spinning dinosaur" src="/images/dino-vr.png" style="max-width: 200px; float: right; margin: 10px;"/>
+
 I then made my first mistake: I decided that since this was a learning exercise, I might as well go all in and learn *all the things*. I created my own rendering engine using WebGL2, written in TypeScript. I have to say this was great fun, and hugely interesting, but as I was finishing up shadow mapping, about two weeks into the project, I realised that I still hadn't done a single thing that Three.js wouldn't have done for me out of the box.
 
 I took a step back and decided to start again, this time using Three.js and ES6.
 
 So, right now I have a very early code base on github at https://github.com/GoogleChrome/dino-vr. All it does is show my dino model spinning in an endless circle.
-
-![Spinning dinosaur](/images/dino-vr.png)
 
 If you have a Daydream View and a compatible phone then you should be able to turn on the WebVR flag in Chrome and get VR working too.
 
