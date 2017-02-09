@@ -37,7 +37,7 @@ I then made my first mistake: I decided that since this was a learning exercise,
 
 I took a step back and decided to start again, this time using Three.js and ES6.
 
-So, right now I have a very early code base on github at https://github.com/GoogleChrome/dino-vr. All it does is show my dino model spinning in an endless circle.
+So, right now I have a very early code base [on github](https://github.com/GoogleChrome/dino-vr). All it does is show my dino model spinning in an endless circle.
 
 If you have a Daydream View and a compatible phone then you should be able to turn on the WebVR flag in Chrome and get VR working too.
 
