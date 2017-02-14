@@ -34,7 +34,7 @@ How is this possible?
 
 Well, I'm importing only the parts of Three that I need. So instead of:
 
-{% highlight js linenos %}
+{% highlight js %}
 import * as THREE from 'three';
 
 const renderer = new THREE.WebGLRenderer();
@@ -43,7 +43,7 @@ const scene = new THREE.Scene();
 
 I am doing:
 
-{% highlight js linenos %}
+{% highlight js %}
 import 'three/src/polyfills.js';
 import {WebGLRenderer} from 'three/src/renderers/WebGLRenderer';
 import {Scene} from 'three/src/scenes/Scene';
@@ -62,7 +62,7 @@ This technique requires a little extra work in the rollup config. In order to im
 
 I know that for my game I want the canvas to fill the window when we aren't in VR mode. I've chosen to absolutely position the canvas on top of the body, which I've given a width of 100% and a height of 100vh.
 
-{% highlight css linenos %}
+{% highlight css %}
 html, body {
   margin: 0;
   padding: 0;
@@ -81,7 +81,7 @@ The absolute positioning is mostly so that I can also position the VR toggle but
 
 Then you just have to remember to set the size of the canvas in JS, too.
 
-{% highlight js linenos %}
+{% highlight js %}
 camera.aspect = window.innerWidth / window.innerHeight;
 camera.updateProjectionMatrix();
 camera.updateMatrix();
