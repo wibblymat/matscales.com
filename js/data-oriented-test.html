@@ -2,6 +2,7 @@
 <html>
   <head></head>
   <body>
+    <button id="btn">Go!</button>
     <script>
     function runTest(indices, data, name) {
       let el = document.createElement('div');
@@ -13,8 +14,8 @@
       el.innerText = `${name}: ${elapsed}ms`;
       document.body.appendChild(el);
     }
-
-    {
+  
+    document.getElementById('btn').addEventListener('click', () => {
       const data = new Uint32Array(99999);
       const indices = new Uint32Array(100000000);
 
@@ -49,7 +50,7 @@
 
       runTest(indices, data, 'random');
 
-    }
+    });
     </script>
   </body>
 </html>
