@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head></head>
+  <body>
+    <script>
+    function runTest(indices, data, name) {
+      let el = document.createElement('div');
+      let start = performance.now();
+      for (let i = 0; i < indices.length; i++) {
+        data[indices[i]]++;
+      }
+      let elapsed = performance.now() - start;
+      el.innerText = `${name}: ${elapsed}ms`;
+      document.body.appendChild(el);
+    }
+
+    {
+      const data = new Uint32Array(99999);
+      const indices = new Uint32Array(100000000);
+
+      for (let i = 0; i < data.length; i++) {
+        data[i] = (Math.random() * 1000000) | 0;
+      }
+
+      // Test 1 - linear, close
+      for (let i = 0; i < indices.length; i++) {
+        indices[i] = i % data.length;
+      }
+
+      console.log(indices.slice(0, 30));
+
+      runTest(indices, data, 'linear');
+
+      // Test 2 - linear, skipping
+      for (let i = 0; i < indices.length; i++) {
+        indices[i] = (i * 32) % data.length;
+      }
+
+      console.log(indices.slice(0, 30));
+
+      runTest(indices, data, 'skipping');
+
+      // Test 3 - random
+      for (let i = 0; i < indices.length; i++) {
+        indices[i] = Math.floor(Math.random() * data.length);
+      }
+
+      console.log(indices.slice(0, 30));
+
+      runTest(indices, data, 'random');
+
+    }
+    </script>
+  </body>
+</html>
