@@ -23,6 +23,16 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+.video-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.video-list iframe {
+    background-color: aliceblue;
+    margin: 5px 0px;
+}
 
 
 /**
